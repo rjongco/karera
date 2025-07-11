@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Baloo";
+  src: local("Baloo Bold"), local("Baloo-Bold"),
+    url(/assets/font/Baloo2-Bold.ttf) format("truetype");
+  font-weight: 800; /* Specify the font weight */
+}
+
+@font-face {
+  font-family: "Baloo";
+  src: local("Baloo SemiBold"), local("Baloo-SemiBold"),
+    url(/assets/font/Baloo2-SemiBold.ttf) format("truetype");
+  font-weight: 600; /* Specify the font weight */
+}
+
+@font-face {
+  font-family: "Baloo";
+  src: local("Baloo Regular"), local("Baloo-Regular"),
+    url(/assets/font/Baloo2-Regular.ttf) format("truetype");
+  font-weight: 400; /* Specify the font weight */
+}

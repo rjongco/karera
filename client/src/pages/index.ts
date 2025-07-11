@@ -1,0 +1,17 @@
+export { default as NotAuthenticated } from "./NotAuthenticated";
+export { default as Register } from "./Register";
+export { default as Login } from "./Login";
+export { default as Dashboard } from "./Dashboard";
+export { default as Moderator } from "./Moderator/Index";
+export { default as Player } from "./Player/Index";
+export { default as Logout } from "./Logout";
+export { default as NotFound } from "./NotFound";
+export { default as UserManagement } from "./UserManagement";
+export { default as UserProfile } from "./UserProfile";
+export { default as Logs } from "./Log";
+export { default as Arena } from "./Arena";
+export { default as Notification } from "./Notification";
+export { default as Referrals } from "./Referrals";
+export { default as Credits } from "./Credits";
+export { default as Home } from "./Home";
+export { default as GameZodiac } from "./Games/mobile/zodiac/index";

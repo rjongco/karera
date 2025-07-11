@@ -1,0 +1,137 @@
+
+#zodiacModal {
+  background-color: #ffffff;
+  border-radius: 5px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 15px;
+}
+
+.zodiac {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.totalBetText {
+  font-size: 1.0rem;
+  margin: 0px;
+  height: 30px;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  background-color: blue;
+  border-radius: 5px;
+  width: 90px;
+  height: 30px;
+
+  img {
+    width: 25px;
+    object-fit: contain;
+  }
+
+  .buttonBg {
+    position: absolute;
+  }
+
+  .signName {
+    font-family: 'Roboto';
+    font-size: 0.55rem;
+    color: #ffffff;
+    margin: auto 0px auto 5px;
+  }
+
+  .odds {
+    font-family: 'Roboto';
+    font-size: 1.0rem;
+    color: #ffffff;
+    margin: auto 0px auto 15px;
+  }
+}
+
+
+#betNow {
+  width: 120px;
+}
+
+#title {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 10px;
+
+  p {
+    white-space: nowrap;
+    height: 22px;
+    align-self: end;
+  }
+
+  img:nth-of-type(1) {
+    object-fit: contain;
+    width: 35px;
+  }
+
+  img:nth-of-type(2) {
+    object-fit: contain;
+    width: 25px;
+    justify-self: end;
+  }
+}
+
+
+#winnerBg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+#winnerTextBox {
+  color: #ffffff;
+}
+
+#topPlayersContainer {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+#topPlayerContainerTexts {
+  color: #ffffff;
+}
+
+#rowTexts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#dialog {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+

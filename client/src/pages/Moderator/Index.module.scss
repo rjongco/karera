@@ -1,0 +1,134 @@
+#drawerHidden {
+  position: absolute;
+  top: 40%;
+  right: -10px;
+  border-radius: 15px;
+  background: red;
+  padding: 8px;
+  width: 50px;
+  height: 100px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+}
+
+.drawerImages {
+  width: 40px;
+  height: auto;
+  object-fit: contain;
+}
+
+#main {
+  position: absolute;
+  top: 30%;
+  right: 0px;
+}
+
+#sub {
+  position: relative;
+  width: 190px;
+  height: 230px;
+}
+
+#background {
+  border-radius: 15px;
+  background: #FFFFFF;
+  padding: 8px;
+  width: 190px;
+  height: 230px;
+}
+
+
+#betNow {
+  width: 120px;
+}
+
+#gameOption {
+  width: 40px;
+}
+
+
+#floatingUIShow {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 8px;
+  width: 190px;
+  height: 230px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  align-items: center;
+}
+
+#open {
+  border-radius: 15px;
+  background: green;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+}
+
+.disabledColor {
+  background: #d9d9d9 !important;
+}
+
+#lastCall {
+  border-radius: 15px;
+  background: yellow;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+}
+
+#closed {
+  border-radius: 15px;
+  background: red;
+  padding: 8px;
+  width: 140px;
+  height: 35px;
+}
+
+#newGame {
+  border-radius: 15px;
+  background: blue;
+  padding: 8px;
+  width: 140px;
+  height: 35px;
+}
+
+.uiHorizontal {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  justify-items: center;
+}
+
+
+#fold {
+  position: absolute;
+  left: -30px;
+  top: 25px;
+  width: 30px;
+  height: 35px;
+
+  img {
+    width: 18px;
+    height: auto;
+    object-fit: contain;
+    text-align: center;
+  }
+}
+
+.buttonBg {
+  border-radius: 5px;
+  background: red;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.animateRight {
+  transition: right 0.5s ease; /* Define transition property */
+  right: -190px !important; /* New value for 'right' */
+}
