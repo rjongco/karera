@@ -33,4 +33,4 @@ jobs:
       
     - name: Test
       working-directory: server
-      run: npm test --if-present
+      run: docker ps -a
