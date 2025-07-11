@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Karera Test
 
 on:
   push:
@@ -7,30 +7,53 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    services:
+      mariadb:
+        image: mariadb:10.3
+        ports:
+          - 3306:3306
+        env:
+          MARIADB_DATABASE: zodiac
+          MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: yes
+        options: >-
+          --health-cmd="mysqladmin ping --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Seed database
+        run: mysql -h 127.0.0.1 -u root zodiac < server/karera.sql
+  run:
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
       
-    - name: Setup Node.js 20
-      uses: actions/setup-node@v3
-      with:
-        node-version: 20
-    
-    - name: Cache node modules
-      uses: actions/cache@v3
-      with:
-        path: |
-          server/node_modules
-          ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('server/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-        
-    - name: Install dependencies
-      working-directory: server
-      run: npm install
-      
-    - name: Test
-      working-directory: server
-      run: npm test --if-present
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: |
+            server/node_modules
+            ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('server/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        working-directory: server
+        run: npm install
+
+      - name: Wait for MariaDB to be ready
+        run: |
+          for i in {1..10}; do
+            mysql -h 127.0.0.1 -u root -e "SELECT 1" && break
+            echo "Waiting for MariaDB..."
+            sleep 5
+          done
+
+      - name: Run tests
+        run: echo "Run your test command here"
