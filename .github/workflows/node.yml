@@ -20,6 +20,9 @@ jobs:
           --health-interval=10s
           --health-timeout=5s
           --health-retries=5
+    steps:
+      - name: wheres db
+        run: ls -la
   run:
     runs-on: ubuntu-latest
     needs: build
