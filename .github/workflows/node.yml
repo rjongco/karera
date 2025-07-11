@@ -56,4 +56,5 @@ jobs:
         run: mysql -h 127.0.0.1 -u root zodiac < ./karera.sql
 
       - name: Run tests
+        working-directory: server
         run: npm run dev
